@@ -1,38 +1,369 @@
-.App {
+.app {
+  font-family: Arial, sans-serif;
+  background-color: #fefae0;
+}
+
+html{
+  background-color: #fefae0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  background-color: transparent; 
+}
+
+.logo {
+  height: 5vmin;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; 
+  gap: 10px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px; 
+}
+
+.signup-btn {
+  background-color: #4d6901;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.login-btn {
+  background-color: white;
+  color: #373e08;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px #373e088e solid;
+
+}
+
+.login-btn:hover{
+  background-color: #4d6901;
+  color: white;
+  border: 1px #4d6901 solid;
+}
+
+.signup-btn:hover{
+  background-color: white;
+  color: #373e08;
+}
+
+.welcome-message {
   text-align: center;
+  margin-top: 10px;
+  color: #373e08;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-content {
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  .carousel {
+    width: 90%;
+  }
+
+  .signup-btn{
+    padding: 8px 10px;
+  }
+
+  .login-btn{
+    padding: 8px 10px;
+  }
+
+  .logo {
+    height: 8vmin; 
+  }
+
+  .category-btn{
+    padding: 5px 12px;
+  }
+
+  .merge-btn{
+    padding: 10px 10px;
+  }
+
+  .info-img{
+    height: 18vmin;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Media Query for Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .carousel {
+    width: 50%;
+  }
+
+  .logo {
+    height: 6vmin;
+  }
+
+  .info-img{
+    height: 10vmin;
+  }
+}
+
+
+.categories {
+  display: flex;
+  flex-direction: row; /* Stack buttons vertically */
+  gap: 10px;
+  justify-content: center ;
+}
+
+.merge-btn {
+  padding: 3px 10px; 
+  font-size: 12px;
+  background-color: #4d6901; 
+  color: white; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.category-btn {
+  margin: 5px 0;
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #b6bd82; 
+  color: white; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+
+.category-btn.hidden {
+  opacity: 0; 
+  pointer-events: none; 
+}
+
+.category-btn.merged {
+  display: none;
+}
+
+.merge-btn.merged {
+  background-color: #b6bd82; 
+}
+
+
+.info-list {
+  margin: 20px 0;
+  width: 100%; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.info-list h2 {
+  text-align: left; 
+  margin-bottom: 10px;
+}
+
+.info-list ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.info-list-item {
+  padding: 5px 3px 3px;
+  text-align: left; 
+  width: 90%;
+  max-width: 800px;
+  background-color: #DF4040;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  border: 4px solid black;
+}
+
+.info-list-item:nth-child(odd) {
+  background-color: #DF4040;
+}
+
+.info-list-item:nth-child(even) {
+  background-color: #D7E901;
+}
+
+.info-list-item:nth-child(even) p {
+  color: black;  
+}
+
+.info-list-item:nth-child(even) h3 {
+  text-shadow: 
+  -1px -1px 0 black,  
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+}
+
+
+.info-list-item h3 {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 20pt;
+  margin-left: 10px;
+  color: white;
+  font-weight: bolder;
+}
+
+.info-list-item p {
+  font-size: 12pt;
+  margin-left: 10px;
+  color: white;
+  margin-top: -3px;
+}
+
+.info-img{
+  height: 18vmin;
+  justify-content: flex-end;
+
+}
+
+/* Fire Images */
+#electricalFire {
+  margin-right: 10px;
+}
+
+#houseFire{
+  margin-right: 20px;
+}
+
+#vehicleFire{
+  height: 15vmin;
+  margin-right: 10px;
+}
+
+#forestFire{
+  margin-right: 20px;
+}
+
+/* Flood Images */
+#damFailure{
+  height: 20vmin;
+  margin-right: 20px;
+}
+
+#urbanFlooding{
+  height: 20vmin;
+  margin-right: 10px;
+}
+
+#riverFlooding{
+  height: 18vmin;
+  margin-right: 10px;
+}
+
+#flashFlood{
+  height: 16vmin;
+  margin-right: 3px;
+  margin-top: 20px;
+}
+
+#coastalFlooding{
+  height: 20vmin;
+  margin-right: 15px;
+}
+
+#snowmeltFlooding{
+  height: 18vmin;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+/* ----- */
+
+.category-btn.fire-selected {
+  background-color: red;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.category-btn.flood-selected {
+  background-color: blue; 
+  color: white; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.category-btn.electrical-selected {
+  background-color: yellow; 
+  color: black; 
+}
+
+.category-btn.man-made-selected {
+  background-color: orange; 
+  color: black; 
+}
+
+.category-btn:hover {
+  opacity: 0.8; /* Optional: add hover effect */
+}
+
+
+#shipFire{
+  height: 15vmin;
+  margin-left: 5px;
+}
+
+.info-item{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+/* Buttons */
+.sign-up-card-btn, .sign-up-list-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.sign-up-card-btn:hover, .sign-up-list-btn:hover {
+  background-color: darkgreen;
+}
+
+#fire:hover {
+  background-color: red;
+  color: white;
+  transition: 0.3s;
+}
+
+#flood:hover {
+  background-color: blue;
+  color: white;
+  transition: 0.3s;
+}
+
+#electrical:hover {
+  background-color: yellow;
+  transition: 0.3s;
+}
+
+#man-made:hover {
+  background-color: rgb(60, 38, 3);
+  color: white;
+  transition: 0.3s;
 }
